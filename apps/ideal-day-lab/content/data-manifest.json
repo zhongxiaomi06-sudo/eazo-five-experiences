@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 1,
+  "appId": "ideal-day-lab",
+  "buildVersion": "0.1.0-fixture",
+  "contentVersion": "2026-08-27.fixture.1",
+  "schemaVersions": {
+    "fixture": 1,
+    "rightsLedger": 1
+  },
+  "createdAt": "2026-08-27T00:00:00.000Z",
+  "rollbackBuildVersion": "0.0.0-empty",
+  "files": [
+    {
+      "path": "fixture.json",
+      "sha256": "ab5329ec19dd496675534deaa9a5500844251f198aa5f2f8e79b58cbf4a130a4",
+      "bytes": 327,
+      "contentType": "application/json",
+      "licenseId": "FIXTURE-ONLY",
+      "sourceIds": [
+        "ideal-day-lab:fixture.json"
+      ]
+    },
+    {
+      "path": "rights-ledger.tsv",
+      "sha256": "51fbec0d0e9a7e5ac80ed4faaccdf36191434ffe2fb2f36e41e194bf6faba865",
+      "bytes": 262,
+      "contentType": "text/tab-separated-values",
+      "licenseId": "LEDGER",
+      "sourceIds": [
+        "ideal-day-lab:rights-ledger.tsv"
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "ideal-day-lab-fixture",
+      "version": "1",
+      "retrievedAt": "2026-08-27",
+      "sourceUrl": "project-authored://ideal-day-lab",
+      "licenseId": "FIXTURE-ONLY",
+      "transformVersion": "identity-1",
+      "outputSha256": "ab5329ec19dd496675534deaa9a5500844251f198aa5f2f8e79b58cbf4a130a4"
+    }
+  ],
+  "totalBytes": 589
+}

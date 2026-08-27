@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "generatedFor": "D2-entry-fixture",
+  "flags": [
+    {"id":"eazo-ai","enabled":false,"scope":"build","owner":"user","reason":"real adapter not approved","expiresAt":null},
+    {"id":"eazo-speech","enabled":false,"scope":"build","owner":"user","reason":"real adapter not approved","expiresAt":null},
+    {"id":"space-3d-high","enabled":false,"scope":"build","owner":"user","reason":"real-device GPU profile missing","expiresAt":null},
+    {"id":"life-sensitive-templates","enabled":false,"scope":"build","owner":"user","reason":"content review missing","expiresAt":null},
+    {"id":"share","enabled":false,"scope":"build","owner":"user","reason":"local copy fallback only","expiresAt":null},
+    {"id":"remix","enabled":false,"scope":"build","owner":"user","reason":"local fixture only","expiresAt":null},
+    {"id":"lab-camera-gesture","enabled":false,"scope":"build","owner":"user","reason":"P2 experiment","expiresAt":null}
+  ]
+}

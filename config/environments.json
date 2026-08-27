@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "environments": [
+    {"id":"ENV-CI","runner":"ubuntu-24.04","node":"24.20.0","pnpm":"11.24.0"},
+    {"id":"ENV-PW-MOBILE","playwright":"1.62.1","profiles":["Pixel 7 Chromium","iPhone 12 WebKit"]},
+    {"id":"ENV-HTTPS-OFFLINE","mode":"Playwright HTTPS proxy fixture","status":"configured-not-run"},
+    {"id":"ENV-DEVICE-IOS","minimum":"iPhone 12","status":"requires-device"},
+    {"id":"ENV-DEVICE-ANDROID","minimum":"Pixel 6 plus low-performance Android","status":"requires-device"},
+    {"id":"ENV-DATA-BUILD","runner":"ubuntu-24.04 read-only fixture snapshot","status":"configured"}
+  ],
+  "networkProfiles": {"NET-MOBILE-4G":{"downloadMbps":9,"uploadMbps":3,"rttMs":80,"packetLossPercent":0}}
+}

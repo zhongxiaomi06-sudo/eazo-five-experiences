@@ -1,0 +1,4 @@
+assetId	assetType	sourceUrl	sourceVersion	licenseId	status	reviewer	reviewedAt
+LIFE-FIXTURE-001	data	project-authored://synthetic-life-fixture	1	MIT	approved-fixture	user	2026-08-27
+LIFE-PORTRAIT-001	illustration	project-authored://css-shape-portrait	1	MIT	approved-fixture	user	2026-08-27
+LIFE-FONT-001	font	system-font-stack://local	1	SYSTEM	approved-fixture	user	2026-08-27

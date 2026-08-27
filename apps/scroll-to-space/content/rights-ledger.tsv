@@ -1,0 +1,4 @@
+assetId	assetType	sourceUrl	sourceVersion	licenseId	status	reviewer	reviewedAt
+SPACE-FIXTURE-001	data	project-authored://space-render-fixture	1	MIT	approved-fixture	user	2026-08-27
+SPACE-SHADER-001	code	project-authored://space-webgl-shader	1	MIT	approved-fixture	user	2026-08-27
+SPACE-FONT-001	font	system-font-stack://local	1	SYSTEM	approved-fixture	user	2026-08-27

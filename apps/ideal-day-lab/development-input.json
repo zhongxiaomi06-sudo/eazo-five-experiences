@@ -1,0 +1,9 @@
+{
+  "projectId": "ideal-day-lab",
+  "prdVersion": "2.0.0",
+  "stage": "D2-entry",
+  "defaultLocale": "en-US",
+  "fixture": "content/fixture.json",
+  "rights": "content/rights-ledger.tsv",
+  "openGaps": ["production comparison ledger", "real-device results", "North American copy approval"]
+}

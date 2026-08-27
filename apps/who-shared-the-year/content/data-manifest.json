@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 1,
+  "appId": "who-shared-the-year",
+  "buildVersion": "0.1.0-fixture",
+  "contentVersion": "2026-08-27.fixture.1",
+  "schemaVersions": {
+    "fixture": 1,
+    "rightsLedger": 1
+  },
+  "createdAt": "2026-08-27T00:00:00.000Z",
+  "rollbackBuildVersion": "0.0.0-empty",
+  "files": [
+    {
+      "path": "fixture.json",
+      "sha256": "bf2f0736b834565426c777fae518cb0fbe8eddbca429ecb536894b61fd886625",
+      "bytes": 451,
+      "contentType": "application/json",
+      "licenseId": "FIXTURE-ONLY",
+      "sourceIds": [
+        "who-shared-the-year:fixture.json"
+      ]
+    },
+    {
+      "path": "rights-ledger.tsv",
+      "sha256": "dc1ed5a606ca7b3f55b1f163e23c9dcb6978629b9e40daa8fa85bc9d2b47b5ab",
+      "bytes": 385,
+      "contentType": "text/tab-separated-values",
+      "licenseId": "LEDGER",
+      "sourceIds": [
+        "who-shared-the-year:rights-ledger.tsv"
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "who-shared-the-year-fixture",
+      "version": "1",
+      "retrievedAt": "2026-08-27",
+      "sourceUrl": "project-authored://who-shared-the-year",
+      "licenseId": "FIXTURE-ONLY",
+      "transformVersion": "identity-1",
+      "outputSha256": "bf2f0736b834565426c777fae518cb0fbe8eddbca429ecb536894b61fd886625"
+    }
+  ],
+  "totalBytes": 836
+}

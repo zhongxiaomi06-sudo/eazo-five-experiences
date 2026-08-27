@@ -1,0 +1,46 @@
+{
+  "manifestVersion": 1,
+  "appId": "scroll-to-space",
+  "buildVersion": "0.1.0-fixture",
+  "contentVersion": "2026-08-27.fixture.1",
+  "schemaVersions": {
+    "fixture": 1,
+    "rightsLedger": 1
+  },
+  "createdAt": "2026-08-27T00:00:00.000Z",
+  "rollbackBuildVersion": "0.0.0-empty",
+  "files": [
+    {
+      "path": "fixture.json",
+      "sha256": "cf6d4315ae4529d87870a3884a06f7934102c1266cf5d94d9178b8a4f9dda606",
+      "bytes": 304,
+      "contentType": "application/json",
+      "licenseId": "FIXTURE-ONLY",
+      "sourceIds": [
+        "scroll-to-space:fixture.json"
+      ]
+    },
+    {
+      "path": "rights-ledger.tsv",
+      "sha256": "9adb5aaeb929d2abc8f5faaa937439f61003d7e404cf472dd945957b2c304ece",
+      "bytes": 368,
+      "contentType": "text/tab-separated-values",
+      "licenseId": "LEDGER",
+      "sourceIds": [
+        "scroll-to-space:rights-ledger.tsv"
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "datasetId": "scroll-to-space-fixture",
+      "version": "1",
+      "retrievedAt": "2026-08-27",
+      "sourceUrl": "project-authored://scroll-to-space",
+      "licenseId": "FIXTURE-ONLY",
+      "transformVersion": "identity-1",
+      "outputSha256": "cf6d4315ae4529d87870a3884a06f7934102c1266cf5d94d9178b8a4f9dda606"
+    }
+  ],
+  "totalBytes": 672
+}
