@@ -1,10 +1,11 @@
 {
   "manifestVersion": 1,
   "appId": "weird-matter-lab",
-  "buildVersion": "0.1.0-fixture",
-  "contentVersion": "2026-08-27.fixture.1",
+  "buildVersion": "1.0.0-rc.1",
+  "contentVersion": "2026-08-27.production.1",
   "schemaVersions": {
     "fixture": 1,
+    "catalog": 1,
     "rightsLedger": 1
   },
   "createdAt": "2026-08-27T00:00:00.000Z",
@@ -15,32 +16,112 @@
       "sha256": "9919a562aa999ba3285b9f82a4541c5a71e2b3d1b656e9ff7f16316983698c71",
       "bytes": 385,
       "contentType": "application/json",
-      "licenseId": "FIXTURE-ONLY",
+      "licenseId": "MIT",
       "sourceIds": [
         "weird-matter-lab:fixture.json"
       ]
     },
     {
+      "path": "catalog.json",
+      "sha256": "5790b655a5b73f46ab24cc68cfa63a3849ff52eb3b754d315cac1cb9dcff72e5",
+      "bytes": 42233,
+      "contentType": "application/json",
+      "licenseId": "MIT",
+      "sourceIds": [
+        "weird-matter-lab:catalog.json"
+      ]
+    },
+    {
       "path": "rights-ledger.tsv",
-      "sha256": "b0ecc1231367714ae81d7950c0401a9219a0985dd61d04c66f2686125c96d3da",
-      "bytes": 370,
+      "sha256": "3cd39749545159e5d5e3f226931635b5c40923c53abccdea23f5160652f33a0b",
+      "bytes": 1401,
       "contentType": "text/tab-separated-values",
       "licenseId": "LEDGER",
       "sourceIds": [
         "weird-matter-lab:rights-ledger.tsv"
       ]
+    },
+    {
+      "path": "og.png",
+      "sha256": "8083ff146bfe151dee2224d25b465813a8a6d4aa13e2e71d8ed275faa005de9c",
+      "bytes": 923056,
+      "contentType": "image/png",
+      "licenseId": "PROJECT-GENERATED",
+      "sourceIds": [
+        "weird-matter-lab:og.png"
+      ]
+    },
+    {
+      "path": "matter-specimens-v2.png",
+      "sha256": "4bc2bb615c93f44d3f002f47a6d5cce84f9499a56fab14afe8a78f8b0317bda2",
+      "bytes": 1566179,
+      "contentType": "image/png",
+      "licenseId": "PROJECT-GENERATED",
+      "sourceIds": [
+        "weird-matter-lab:matter-specimens-v2.png"
+      ]
+    },
+    {
+      "path": "matter-specimens-v2.webp",
+      "sha256": "183c45208c0f698d8d7247095fd1af1414f7e7ddd29778ceda085d9e8d11580e",
+      "bytes": 303870,
+      "contentType": "image/webp",
+      "licenseId": "PROJECT-GENERATED",
+      "sourceIds": [
+        "weird-matter-lab:matter-specimens-v2.webp"
+      ]
+    },
+    {
+      "path": "reels/magnetic-bloom.mp4",
+      "sha256": "d3b4f57c6ae9aed8856f7ce7432e81a9a46d3dadf00cd6f8bb49eae119e9bcff",
+      "bytes": 262019,
+      "contentType": "video/mp4",
+      "licenseId": "PEXELS-LICENSE",
+      "sourceIds": [
+        "weird-matter-lab:reels/magnetic-bloom.mp4"
+      ]
+    },
+    {
+      "path": "reels/ink-collision.mp4",
+      "sha256": "96650699ae3dfa6b3c0a1b8b38218b5089364ff521dbbf0eafb1681e83620f36",
+      "bytes": 160929,
+      "contentType": "video/mp4",
+      "licenseId": "PEXELS-LICENSE",
+      "sourceIds": [
+        "weird-matter-lab:reels/ink-collision.mp4"
+      ]
+    },
+    {
+      "path": "reels/liquid-vortex.mp4",
+      "sha256": "7c36fbf4d9b00e3d0cc14b6ded6dded325abd48458bfe66568b76414e8f8270a",
+      "bytes": 397680,
+      "contentType": "video/mp4",
+      "licenseId": "PEXELS-LICENSE",
+      "sourceIds": [
+        "weird-matter-lab:reels/liquid-vortex.mp4"
+      ]
+    },
+    {
+      "path": "sw.js",
+      "sha256": "3e37872b8212cb89404199ea622c88cf00367e1d81077a3291caac8db851e10c",
+      "bytes": 719,
+      "contentType": "text/javascript",
+      "licenseId": "MIT",
+      "sourceIds": [
+        "weird-matter-lab:sw.js"
+      ]
     }
   ],
   "datasets": [
     {
-      "datasetId": "weird-matter-lab-fixture",
+      "datasetId": "weird-matter-lab-catalog",
       "version": "1",
       "retrievedAt": "2026-08-27",
-      "sourceUrl": "project-authored://weird-matter-lab",
-      "licenseId": "FIXTURE-ONLY",
-      "transformVersion": "identity-1",
-      "outputSha256": "9919a562aa999ba3285b9f82a4541c5a71e2b3d1b656e9ff7f16316983698c71"
+      "sourceUrl": "project-authored://weird-matter-lab/catalog",
+      "licenseId": "MIT",
+      "transformVersion": "lab-content-v1",
+      "outputSha256": "5790b655a5b73f46ab24cc68cfa63a3849ff52eb3b754d315cac1cb9dcff72e5"
     }
   ],
-  "totalBytes": 755
+  "totalBytes": 3658471
 }

@@ -103,7 +103,41 @@ export class FakeEazoAdapter extends WebFallbackAdapter {
   }
 }
 
+type InjectedEazoBridge = {
+  getLaunchParams?: () => Promise<Record<string, string>>;
+  getLocale?: () => Promise<string>;
+  getCapabilities?: () => Promise<Partial<HostCapabilities>>;
+  share?: (payload: SharePayload) => Promise<HostResult<{ shareId: string; url: string }>>;
+  remix?: (payload: RemixPayload) => Promise<HostResult<{ remixId: string; launchParams: Record<string, string> }>>;
+  track?: (event: TelemetryEvent) => Promise<HostResult>;
+  requestResize?: (heightPx: number) => void;
+};
+
+const injectedBridge = (): InjectedEazoBridge | undefined =>
+  (globalThis as typeof globalThis & { eazo?: InjectedEazoBridge }).eazo;
+
+/** Production adapter for the capability bridge injected by the Eazo container. */
+export class EazoHostAdapter extends WebFallbackAdapter {
+  readonly #bridge: InjectedEazoBridge;
+  constructor(bridge: InjectedEazoBridge) { super(); this.#bridge = bridge; }
+  override async getLaunchParams() { return this.#bridge.getLaunchParams?.() ?? super.getLaunchParams(); }
+  override async getLocale() { return this.#bridge.getLocale?.() ?? super.getLocale(); }
+  override async getCapabilities(): Promise<HostCapabilities> {
+    const native = await this.#bridge.getCapabilities?.() ?? {};
+    return { ...defaultCapabilities, ...native, share: Boolean(this.#bridge.share ?? native.share), remix: Boolean(this.#bridge.remix ?? native.remix) };
+  }
+  override async share(payload: SharePayload) { return this.#bridge.share?.(payload) ?? super.share(payload); }
+  override async remix(payload: RemixPayload) { return this.#bridge.remix?.(payload) ?? super.remix(payload); }
+  override async track(event: TelemetryEvent) { return this.#bridge.track?.(event) ?? super.track(event); }
+  override requestResize(heightPx: number) {
+    if (this.#bridge.requestResize) this.#bridge.requestResize(heightPx);
+    else super.requestResize(heightPx);
+  }
+}
+
 export const selectHostAdapter = (): EazoHostPort => {
   const fixtureMode = new URLSearchParams(globalThis.location?.search ?? '').get('fixture') === '1';
-  return fixtureMode ? new FakeEazoAdapter() : new WebFallbackAdapter();
+  if (fixtureMode) return new FakeEazoAdapter();
+  const bridge = injectedBridge();
+  return bridge ? new EazoHostAdapter(bridge) : new WebFallbackAdapter();
 };

@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { DataManifestV1 } from '@eazo/contracts';
 import { AtomicContentCache } from './atomic-cache';
-import { FakeEazoAdapter, WebFallbackAdapter } from './adapters';
+import { EazoHostAdapter, FakeEazoAdapter, WebFallbackAdapter } from './adapters';
 import { evaluateKillSwitch, resolveFlag } from './flags';
 import { validateManifestShape } from './manifest-validator';
 
@@ -75,5 +75,16 @@ describe('platform contracts', () => {
     const result = validateManifestShape(invalid, new Set(['FIXTURE-ONLY']), new Set());
     expect(result.valid).toBe(false);
     if (!result.valid) expect(new Set(result.errors.map((error) => error.code))).toEqual(new Set(['FILE_MISSING', 'DUPLICATE_PATH', 'HASH_MISMATCH', 'LICENSE_UNKNOWN', 'ROLLBACK_MISSING']));
+  });
+});
+
+describe('EazoHostAdapter', () => {
+  it('uses the injected production bridge for sharing and capabilities', async () => {
+    const adapter = new EazoHostAdapter({
+      getCapabilities: async () => ({ share: true }),
+      share: async () => ({ ok: true, value: { shareId: 'real-1', url: 'https://eazo.example/s/real-1' } }),
+    });
+    await expect(adapter.getCapabilities()).resolves.toMatchObject({ share: true });
+    await expect(adapter.share({ appId: 'who-shared-the-year', schemaVersion: 1, publicData: {} })).resolves.toMatchObject({ ok: true, value: { shareId: 'real-1' } });
   });
 });

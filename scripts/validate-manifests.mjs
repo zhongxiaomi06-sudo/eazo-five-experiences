@@ -2,7 +2,10 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
-const apps = ['ideal-day-lab','scroll-to-space','life-elsewhere-now','who-shared-the-year','weird-matter-lab'];
+const availableApps = ['ideal-day-lab','scroll-to-space','life-elsewhere-now','who-shared-the-year','weird-matter-lab'];
+const requestedApps = process.argv.slice(2);
+const apps = requestedApps.length ? availableApps.filter((app) => requestedApps.includes(app)) : availableApps;
+if (!apps.length) throw new Error(`Unknown app. Choose one of: ${availableApps.join(', ')}`);
 const hash = (buffer) => createHash('sha256').update(buffer).digest('hex');
 let failures = 0;
 

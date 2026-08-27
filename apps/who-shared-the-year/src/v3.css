@@ -1,0 +1,517 @@
+:root {
+  --v3-paper: #eee9df;
+  --v3-card: #f8f5ee;
+  --v3-ink: #171714;
+  --v3-muted: #746e64;
+  --v3-red: #d9472f;
+  --v3-sage: #a9ad93;
+}
+
+html {
+  background: var(--v3-paper);
+}
+
+body {
+  background:
+    radial-gradient(circle at 12% 8%, #fff8 0 1px, transparent 1.5px) 0 0 / 13px 13px,
+    var(--v3-paper);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 9;
+  height: 62px;
+  background: #eee9dfeb;
+  border-color: #17171424;
+  backdrop-filter: blur(16px);
+}
+
+.topbar nav a {
+  text-underline-offset: 4px;
+}
+
+.intro {
+  width: min(1440px, 100%);
+  margin: 0 auto;
+  padding: 28px clamp(20px, 4vw, 64px) 88px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(340px, 0.94fr);
+  align-items: center;
+  gap: clamp(36px, 6vw, 96px);
+}
+
+.hero-art {
+  min-height: min(72vh, 760px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px 28px 120px 28px;
+  background-image:
+    linear-gradient(180deg, #0000 55%, #15120eb8 100%),
+    url('/assets/1564-marble-telescope-v1.jpg');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 30px 80px #33261722;
+  isolation: isolate;
+}
+
+.hero-art::after {
+  content: '';
+  position: absolute;
+  inset: 14px;
+  border: 1px solid #fff7;
+  border-radius: 18px 18px 105px 18px;
+  pointer-events: none;
+}
+
+.hero-art p,
+.hero-art strong,
+.hero-art span {
+  position: absolute;
+  z-index: 1;
+  color: #fff;
+  margin: 0;
+}
+
+.hero-art p {
+  left: 34px;
+  bottom: 92px;
+  font-size: 0.64rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.hero-art strong {
+  left: 30px;
+  bottom: 26px;
+  font-family: Georgia, serif;
+  font-size: clamp(3rem, 6vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.9;
+}
+
+.hero-art span {
+  right: 34px;
+  bottom: 34px;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero-copy {
+  max-width: 650px;
+}
+
+.hero-copy h1 {
+  margin: 18px 0 30px;
+  font-size: clamp(3.5rem, 6.8vw, 7.8rem);
+  line-height: 0.88;
+  letter-spacing: -0.075em;
+}
+
+.hero-copy h1 em {
+  display: inline-block;
+  margin-top: 0.1em;
+}
+
+.hero-copy .lede {
+  max-width: 31ch;
+  margin: 0;
+  color: #403a32;
+  font-size: clamp(1.05rem, 1.6vw, 1.4rem);
+}
+
+.hero-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 38px;
+  padding: 13px 18px;
+  border: 1px solid var(--v3-ink);
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hero-jump span {
+  color: var(--v3-red);
+  font-size: 1rem;
+}
+
+.year-console {
+  width: min(1240px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 28px clamp(22px, 4vw, 52px);
+  border-radius: 24px;
+  background: var(--v3-ink);
+  box-shadow: 0 22px 60px #17171418;
+}
+
+.stage {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+  padding: 90px clamp(20px, 4vw, 52px);
+}
+
+.year-heading {
+  align-items: center;
+  margin-bottom: 48px;
+}
+
+.year-heading h2 {
+  margin-top: 8px;
+  font-size: clamp(4.8rem, 10vw, 9rem);
+}
+
+.year-heading .era-note {
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: inherit;
+  font-style: normal;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.pair {
+  gap: 18px;
+}
+
+.person-card {
+  min-width: 0;
+  padding: 16px;
+  grid-template-columns: minmax(150px, 43%) 1fr;
+  border: 1px solid #1717141c;
+  border-radius: 24px;
+  background: #f7f3ebc9;
+  box-shadow: 0 18px 50px #3326170c;
+}
+
+.portrait {
+  border-radius: 16px 16px 54px 16px;
+}
+
+.portrait.story-object {
+  background-color: #cfc3ad;
+  background-image: url('/assets/1564-marble-telescope-v1.jpg');
+  background-repeat: no-repeat;
+  background-size: 215% auto;
+  filter: saturate(0.86) contrast(1.03);
+}
+
+.portrait.story-object::before {
+  display: none;
+}
+
+.portrait.story-object > span {
+  opacity: 0;
+}
+
+.portrait-michelangelo {
+  background-position: 4% 64%;
+}
+
+.portrait-galileo {
+  background-position: 97% 63%;
+}
+
+.person-copy h3 {
+  text-wrap: balance;
+}
+
+.why {
+  max-width: 920px;
+  margin-top: 42px;
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid #17171420;
+  border-radius: 28px;
+  background: var(--v3-card);
+}
+
+.why > p:nth-child(2) {
+  margin: 12px auto 28px;
+  max-width: 32ch;
+}
+
+.evidence-links {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.evidence-links a {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  text-decoration: none;
+}
+
+.actions button {
+  border-radius: 999px;
+}
+
+.discover {
+  padding: 70px max(20px, calc((100vw - 1120px) / 2));
+  background: #d6d3c4;
+}
+
+.discover > div {
+  grid-template-columns: repeat(6, minmax(130px, 1fr));
+}
+
+.discover button {
+  min-height: 126px;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.discover button:hover {
+  transform: translateY(-4px);
+}
+
+.method {
+  width: min(1240px, 100%);
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .intro {
+    grid-template-columns: 1fr;
+    padding-top: 18px;
+    gap: 34px;
+  }
+
+  .hero-art {
+    min-height: 58vh;
+    max-height: 660px;
+  }
+
+  .hero-copy {
+    max-width: 760px;
+  }
+
+  .discover > div {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+  }
+
+  .discover button {
+    flex: 0 0 min(260px, 72vw);
+    scroll-snap-align: start;
+    border: 1px solid #a9a093;
+  }
+}
+
+@media (max-width: 700px) {
+  .topbar {
+    height: 58px;
+    padding-inline: 16px;
+  }
+
+  .topbar nav {
+    gap: 0;
+  }
+
+  .intro {
+    padding: 12px 12px 54px;
+  }
+
+  .hero-art {
+    min-height: 52svh;
+    border-radius: 18px 18px 74px 18px;
+    background-position: 52% center;
+  }
+
+  .hero-art::after {
+    inset: 9px;
+    border-radius: 12px 12px 63px 12px;
+  }
+
+  .hero-art p {
+    left: 22px;
+    bottom: 76px;
+  }
+
+  .hero-art strong {
+    left: 20px;
+    bottom: 24px;
+    font-size: 3.8rem;
+  }
+
+  .hero-art span {
+    right: 22px;
+    bottom: 27px;
+  }
+
+  .hero-copy {
+    padding: 0 6px;
+  }
+
+  .hero-copy h1 {
+    margin: 15px 0 22px;
+    font-size: clamp(3.1rem, 15.5vw, 4.7rem);
+    line-height: 0.91;
+    letter-spacing: -0.07em;
+  }
+
+  .hero-copy .lede {
+    max-width: 30ch;
+    font-size: 1.08rem;
+    line-height: 1.5;
+  }
+
+  .hero-jump {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 28px;
+  }
+
+  .year-console {
+    width: calc(100% - 24px);
+    padding: 22px 18px;
+    border-radius: 18px;
+    gap: 24px;
+  }
+
+  .year-console .input-row input {
+    min-width: 0;
+    font-size: 1.45rem;
+  }
+
+  .stage {
+    padding: 56px 14px 72px;
+  }
+
+  .year-heading {
+    align-items: flex-end;
+    margin-bottom: 22px;
+    padding: 0 4px 18px;
+  }
+
+  .year-heading h2 {
+    font-size: 4.7rem;
+    line-height: 0.8;
+  }
+
+  .year-heading .era-note {
+    max-width: 13ch;
+    padding: 7px 10px;
+    text-align: center;
+    line-height: 1.35;
+  }
+
+  .pair {
+    gap: 12px;
+  }
+
+  .person-card,
+  .person-card:nth-child(2) {
+    min-height: 190px;
+    padding: 11px;
+    grid-template-columns: 118px minmax(0, 1fr);
+    direction: ltr;
+    gap: 16px;
+    border-radius: 18px;
+  }
+
+  .person-card:nth-child(2) > * {
+    direction: ltr;
+  }
+
+  .portrait {
+    height: 166px;
+    aspect-ratio: auto;
+    border-radius: 12px 12px 42px 12px;
+  }
+
+  .person-card h3 {
+    margin: 8px 0;
+    font-size: clamp(1.8rem, 9vw, 2.45rem);
+  }
+
+  .coordinates {
+    font-size: 0.56rem;
+  }
+
+  .lifespan {
+    margin: 8px 0;
+  }
+
+  .why {
+    margin-top: 18px;
+    padding: 24px 20px;
+    border-radius: 18px;
+    text-align: left;
+  }
+
+  .why > p:nth-child(2) {
+    margin-inline: 0;
+    font-size: 1.45rem;
+  }
+
+  .reason-list,
+  .evidence-links {
+    justify-content: flex-start;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+    gap: 9px;
+    margin-top: 18px;
+  }
+
+  .actions button {
+    min-height: 48px;
+  }
+
+  .discover {
+    padding: 48px 16px;
+  }
+
+  .method {
+    padding: 72px 18px 90px;
+    gap: 24px;
+  }
+
+  .method h2 {
+    font-size: 3.6rem;
+  }
+
+  footer {
+    padding: 30px 18px;
+  }
+}
+
+@media (max-width: 370px) {
+  .hero-art {
+    min-height: 48svh;
+  }
+
+  .person-card,
+  .person-card:nth-child(2) {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+
+  .portrait {
+    height: 148px;
+  }
+
+  .person-card h3 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .discover button {
+    transition: none;
+  }
+}

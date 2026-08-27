@@ -2,3 +2,10 @@ assetId	assetType	sourceUrl	sourceVersion	licenseId	status	reviewer	reviewedAt
 LAB-FIXTURE-001	data	project-authored://worker-simulation-fixture	1	MIT	approved-fixture	user	2026-08-27
 LAB-RENDER-001	code	project-authored://css-material-renderer	1	MIT	approved-fixture	user	2026-08-27
 LAB-FONT-001	font	system-font-stack://local	1	SYSTEM	approved-fixture	user	2026-08-27
+LAB-CONTENT-001	data	project-authored://weird-matter-lab/catalog	1	MIT	engineering-approved	automated-content-gate	2026-08-27
+LAB-OG-001	image	project-generated://imagegen/weird-matter-social-card	1	PROJECT-GENERATED	engineering-approved	visual-qa	2026-08-27
+LAB-HERO-002	image	project-generated://imagegen/matter-specimens-v2	2	PROJECT-GENERATED	engineering-approved	visual-qa	2026-08-27
+LAB-HERO-002-WEB	image	project-derived://LAB-HERO-002/webp-q86	2	PROJECT-GENERATED	engineering-approved	asset-optimization	2026-08-27
+LAB-REEL-001	video	https://www.pexels.com/video/inky-16296848/	16296848	PEXELS-LICENSE	engineering-approved	Film Composite / rights-audit	2026-08-27
+LAB-REEL-002	video	https://www.pexels.com/video/a-yellow-and-black-ink-is-being-poured-into-water-18333329/	18333329	PEXELS-LICENSE	engineering-approved	Engin Akyurt / rights-audit	2026-08-27
+LAB-REEL-003	video	https://www.pexels.com/video/colors-mixing-in-the-water-7126320/	7126320	PEXELS-LICENSE	engineering-approved	Engin Akyurt / rights-audit	2026-08-27

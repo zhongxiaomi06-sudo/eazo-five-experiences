@@ -1,4 +1,10 @@
 assetId	assetType	sourceUrl	sourceVersion	licenseId	status	reviewer	reviewedAt
-SPACE-FIXTURE-001	data	project-authored://space-render-fixture	1	MIT	approved-fixture	user	2026-08-27
-SPACE-SHADER-001	code	project-authored://space-webgl-shader	1	MIT	approved-fixture	user	2026-08-27
-SPACE-FONT-001	font	system-font-stack://local	1	SYSTEM	approved-fixture	user	2026-08-27
+SPACE-STORY-001	data	project-authored://scroll-to-space-story	2	MIT	approved-production	user	2026-08-27
+SPACE-SHADER-001	code	project-authored://space-webgl-shader	2	MIT	approved-production	user	2026-08-27
+SPACE-CITY-BJ-001	procedural-art	project-authored://beijing-silhouette	1	MIT	approved-production	user	2026-08-27
+SPACE-CITY-DC-001	procedural-art	project-authored://washington-silhouette	1	MIT	approved-production	user	2026-08-27
+SPACE-OG-001	generated-image	openai-imagegen://01a04349-d0bd-7453-bb08-33e28f383ed8	1	PROJECT-GENERATED	approved-production	user	2026-08-27
+SPACE-SCI-NASA-001	science-source	https://science.nasa.gov/earth/earth-atmosphere/earths-atmosphere-a-multi-layered-cake/	2024-10-22	PUBLIC-REFERENCE	approved-production	user	2026-08-27
+SPACE-SCI-NASA-002	science-source	https://www.nasa.gov/general/what-is-earths-atmosphere/	2024-05-13	PUBLIC-REFERENCE	approved-production	user	2026-08-27
+SPACE-SCI-NOAA-001	science-source	https://www.nesdis.noaa.gov/about/k-12-education/atmosphere/what-the-jet-stream	2026-08-27	PUBLIC-REFERENCE	approved-production	user	2026-08-27
+SPACE-FONT-001	font	system-font-stack://local	1	SYSTEM	approved-production	user	2026-08-27

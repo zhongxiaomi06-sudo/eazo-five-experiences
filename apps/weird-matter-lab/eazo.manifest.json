@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "contentId": "weird-matter-lab",
+  "version": "1.0.0-rc.1",
+  "entry": "index.html",
+  "sdk": {"package": "@eazo/sdk", "version": "0.22.8", "appIdEnv": "VITE_EAZO_APP_ID"},
+  "runtime": {"minBrowser": "ES2023", "worker": true, "canvas2d": true, "webgl": false, "wasm": false},
+  "metadata": {
+    "title": "Weird Matter Lab",
+    "description": "Ridiculous goals. Real ideas. A safety-first matter sandbox.",
+    "category": "interactive-education",
+    "tags": ["science", "sandbox", "remix", "education"],
+    "defaultLocale": "en-US",
+    "locales": ["en-US"],
+    "ageRating": "human-review-required"
+  },
+  "capabilities": ["device.getContext", "share.compose"],
+  "permissions": ["local-storage"],
+  "fallbacks": {"share": "download-remix", "storage": "local-atomic-save", "offline": "service-worker"},
+  "integrity": {"algorithm": "sha256", "manifest": "content/data-manifest.json"}
+}

@@ -1,1 +1,21 @@
-{"schemaVersion":1,"fixtureOnly":true,"cities":["Beijing","Washington, D.C."],"stages":[{"id":"S1","heightM":100},{"id":"S2","heightM":10000},{"id":"S3","heightM":50000},{"id":"S4","heightM":100000},{"id":"S5","heightM":408000}],"claimBoundary":"Fixture copy requires science review before production."}
+{
+  "schemaVersion": 2,
+  "fixtureOnly": false,
+  "contentStatus": "production-candidate",
+  "defaultLocale": "en-US",
+  "cities": ["beijing", "washington-dc"],
+  "stages": [
+    { "id": "S1", "rangeM": [0, 2000] },
+    { "id": "S2", "rangeM": [2000, 12000] },
+    { "id": "S3", "rangeM": [12000, 50000] },
+    { "id": "S4", "rangeM": [50000, 100000] },
+    { "id": "S5", "rangeM": [100000, 408000] }
+  ],
+  "knowledgeCardCount": 20,
+  "cardsPerJourney": 12,
+  "mapping": "piecewise-logarithmic",
+  "renderer": "webgl1",
+  "fallback": "canvas2d-static",
+  "eazoSdk": "@eazo/sdk@0.22.8",
+  "claimBoundary": "100 km is presented as a convention, never a natural wall. Visual objects are marked illustrative."
+}

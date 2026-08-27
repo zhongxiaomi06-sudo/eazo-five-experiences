@@ -1,0 +1,31 @@
+name: ideal-day-production
+on:
+  push:
+    paths:
+      - 'apps/ideal-day-lab/**'
+      - 'packages/**'
+      - 'tests/e2e/ideal-day.spec.ts'
+      - 'pnpm-lock.yaml'
+      - '.github/workflows/ideal-day-ci.yml'
+  pull_request:
+    paths:
+      - 'apps/ideal-day-lab/**'
+      - 'packages/**'
+      - 'tests/e2e/ideal-day.spec.ts'
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with: { version: 11.24.0 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 24.20.0, cache: pnpm }
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm --filter @eazo/ideal-day-lab typecheck
+      - run: pnpm vitest run apps/ideal-day-lab/src/domain.test.ts
+      - run: pnpm --filter @eazo/ideal-day-lab build
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm exec playwright test tests/e2e/ideal-day.spec.ts --project=day-pixel --project=day-iphone

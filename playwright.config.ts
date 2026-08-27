@@ -24,5 +24,7 @@ export default defineConfig({
       { name: `${app}-pixel`, metadata: { app }, use: { ...devices['Pixel 7'], baseURL: `http://127.0.0.1:${port}` } },
       { name: `${app}-iphone`, metadata: { app }, use: { ...devices['iPhone 12'], baseURL: `http://127.0.0.1:${port}` } },
     ]),
+    { name: 'day-tablet', metadata: { app: 'day' }, use: { ...devices['iPad Pro 11'], baseURL: 'http://127.0.0.1:5101' } },
+    { name: 'day-desktop', metadata: { app: 'day' }, use: { viewport: { width: 1440, height: 1000 }, baseURL: 'http://127.0.0.1:5101' } },
   ],
 });

@@ -22,12 +22,32 @@
     },
     {
       "path": "rights-ledger.tsv",
-      "sha256": "51fbec0d0e9a7e5ac80ed4faaccdf36191434ffe2fb2f36e41e194bf6faba865",
-      "bytes": 262,
+      "sha256": "7d28d06546970411caad0283584f89be6bd8e5eee801ddc091a7b52e639a6c72",
+      "bytes": 1008,
       "contentType": "text/tab-separated-values",
       "licenseId": "LEDGER",
       "sourceIds": [
         "ideal-day-lab:rights-ledger.tsv"
+      ]
+    },
+    {
+      "path": "og.png",
+      "sha256": "c52ede5ef7cab07a91ca49846759d8e667c3f3c1bf01011aac1a3bb72e0413af",
+      "bytes": 1097597,
+      "contentType": "image/png",
+      "licenseId": "FIXTURE-ONLY",
+      "sourceIds": [
+        "ideal-day-lab:og.png"
+      ]
+    },
+    {
+      "path": "sw.js",
+      "sha256": "a536ac1a9c2bfc65f8855c988e3817c6b9f13b9583fb5f14331897bffaa7d85e",
+      "bytes": 740,
+      "contentType": "text/javascript",
+      "licenseId": "FIXTURE-ONLY",
+      "sourceIds": [
+        "ideal-day-lab:sw.js"
       ]
     }
   ],
@@ -42,5 +62,5 @@
       "outputSha256": "ab5329ec19dd496675534deaa9a5500844251f198aa5f2f8e79b58cbf4a130a4"
     }
   ],
-  "totalBytes": 589
+  "totalBytes": 1099672
 }

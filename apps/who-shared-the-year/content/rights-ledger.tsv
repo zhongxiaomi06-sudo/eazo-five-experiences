@@ -2,3 +2,4 @@ assetId	assetType	sourceUrl	sourceVersion	licenseId	status	reviewer	reviewedAt
 YEAR-FIXTURE-001	data	project-authored://historical-logic-fixture	1	FIXTURE-ONLY	approved-fixture	user	2026-08-27
 YEAR-PORTRAIT-001	illustration	project-authored://letter-fallback	1	MIT	approved-fixture	user	2026-08-27
 YEAR-FONT-001	font	system-font-stack://local	1	SYSTEM	approved-fixture	user	2026-08-27
+YEAR-ART-1564-001	illustration	project-authored://openai-imagegen/1564-marble-telescope-v1	1	OPENAI-GENERATED	approved-project-asset	codex	2026-08-27

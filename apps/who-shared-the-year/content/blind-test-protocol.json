@@ -1,0 +1,35 @@
+{
+  "protocolVersion": "1.0.0",
+  "status": "recruitment-not-started",
+  "minimumParticipants": 12,
+  "targetParticipants": 20,
+  "language": "en-US",
+  "arms": [
+    { "id": "A", "name": "people-list", "description": "Names, life dates, and fields only." },
+    { "id": "B", "name": "contrast-card", "description": "One evidence-reviewed same-year claim." },
+    { "id": "C", "name": "contrast-plus-meaning", "description": "The same claim plus why it matters." }
+  ],
+  "measures": [
+    "surprise-1-to-5",
+    "clarity-pass-fail",
+    "interest-1-to-5",
+    "confidence-1-to-5",
+    "relation-misread",
+    "immediate-recall",
+    "delayed-recall-24h"
+  ],
+  "hardGates": {
+    "surpriseMedian": 4,
+    "clarityPassRate": 0.85,
+    "relationMisreadCount": 0,
+    "immediateRecallRate": 0.75
+  },
+  "candidateSlots": [
+    "BLIND-01", "BLIND-02", "BLIND-03", "BLIND-04", "BLIND-05", "BLIND-06",
+    "BLIND-07", "BLIND-08", "BLIND-09", "BLIND-10", "BLIND-11", "BLIND-12",
+    "BLIND-13", "BLIND-14", "BLIND-15", "BLIND-16", "BLIND-17", "BLIND-18",
+    "BLIND-19", "BLIND-20", "BLIND-21", "BLIND-22", "BLIND-23", "BLIND-24"
+  ],
+  "results": [],
+  "integrityRule": "Do not add synthetic participants or infer missing ratings. Keep raw anonymous responses and report exclusions."
+}

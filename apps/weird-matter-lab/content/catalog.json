@@ -1,0 +1,1528 @@
+{
+  "schemaVersion": 1,
+  "contentVersion": "2026-08-27.production.1",
+  "safetyNotice": "Educational game model. No real-world dangerous recipes, quantities, apparatus settings, or procedures.",
+  "materials": [
+    {
+      "id": "sand",
+      "name": "Sand",
+      "category": "Powders",
+      "state": "powder",
+      "color": "#efb95f",
+      "density": 16,
+      "label": "FACT",
+      "note": "Granular matter settles under gravity and forms slopes."
+    },
+    {
+      "id": "salt",
+      "name": "Salt",
+      "category": "Powders",
+      "state": "powder",
+      "color": "#e8e5dc",
+      "density": 15,
+      "label": "FACT",
+      "note": "Salt crystals can dissolve in water."
+    },
+    {
+      "id": "glass",
+      "name": "Glass",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#89d9e8",
+      "density": 22,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "ceramic",
+      "name": "Ceramic",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#dfd0b8",
+      "density": 24,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "graphite",
+      "name": "Graphite",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#59616b",
+      "density": 18,
+      "label": "FACT",
+      "note": "Graphite conducts because some electrons can move through its layered structure."
+    },
+    {
+      "id": "fiber",
+      "name": "Fiber",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#d7b17a",
+      "density": 9,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "stone",
+      "name": "Stone",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#7e8791",
+      "density": 28,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "clay",
+      "name": "Clay",
+      "category": "Powders",
+      "state": "powder",
+      "color": "#af654a",
+      "density": 17,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "chalk",
+      "name": "Chalk",
+      "category": "Powders",
+      "state": "powder",
+      "color": "#f0eadb",
+      "density": 13,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "charcoal",
+      "name": "Charcoal",
+      "category": "Powders",
+      "state": "powder",
+      "color": "#30343b",
+      "density": 8,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "wax",
+      "name": "Wax",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#f5d986",
+      "density": 7,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "rubber",
+      "name": "Rubber",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#433e48",
+      "density": 10,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#a8e6ff",
+      "density": 9,
+      "label": "FACT",
+      "note": "Ice is solid water and is less dense than liquid water."
+    },
+    {
+      "id": "crystal",
+      "name": "Crystal",
+      "category": "Solids",
+      "state": "solid",
+      "color": "#cbb8ff",
+      "density": 19,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "water",
+      "name": "Water",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#43b8f5",
+      "density": 10,
+      "label": "FACT",
+      "note": "Liquid water flows and can change phase with temperature."
+    },
+    {
+      "id": "oil",
+      "name": "Oil",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#dfb442",
+      "density": 7,
+      "label": "FACT",
+      "note": "Many oils are less dense than water and do not mix readily with it."
+    },
+    {
+      "id": "slime",
+      "name": "Slime",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#82dd6e",
+      "density": 12,
+      "label": "FICTIONAL",
+      "note": "This bright slime is a game material."
+    },
+    {
+      "id": "dye-cyan",
+      "name": "Cyan Dye",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#17d7d0",
+      "density": 10,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "dye-pink",
+      "name": "Pink Dye",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#ef76bd",
+      "density": 10,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "coolant",
+      "name": "Coolant",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#72e5ff",
+      "density": 11,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "syrup",
+      "name": "Syrup",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#bd662f",
+      "density": 14,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "milk",
+      "name": "Milk",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#fff5da",
+      "density": 10,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "ink",
+      "name": "Ink",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#343d8e",
+      "density": 11,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "bubble-liquid",
+      "name": "Bubble Mix",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#9af6d3",
+      "density": 9,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "lava",
+      "name": "Game Lava",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#ff623d",
+      "density": 25,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "liquid-metal",
+      "name": "Liquid Metal",
+      "category": "Liquids",
+      "state": "liquid",
+      "color": "#aab7c1",
+      "density": 36,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "air",
+      "name": "Air",
+      "category": "Gases",
+      "state": "gas",
+      "color": "#d9f4ff",
+      "density": 1,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "category": "Gases",
+      "state": "gas",
+      "color": "#d8f4ff",
+      "density": 1,
+      "label": "FACT",
+      "note": "Water vapor is the gaseous phase of water; visible mist is tiny droplets."
+    },
+    {
+      "id": "carbon-dioxide",
+      "name": "Carbon Dioxide",
+      "category": "Gases",
+      "state": "gas",
+      "color": "#c8ced6",
+      "density": 2,
+      "label": "FACT",
+      "note": "Carbon dioxide diffuses through air."
+    },
+    {
+      "id": "game-stink",
+      "name": "Stink Cloud",
+      "category": "Gases",
+      "state": "gas",
+      "color": "#a6d85e",
+      "density": 2,
+      "label": "FICTIONAL",
+      "note": "A comic gas cloud; never a real recipe."
+    },
+    {
+      "id": "helium",
+      "name": "Helium",
+      "category": "Gases",
+      "state": "gas",
+      "color": "#d6adff",
+      "density": 1,
+      "label": "FACT",
+      "note": "Helium is less dense than air at the same conditions."
+    },
+    {
+      "id": "fog",
+      "name": "Fog",
+      "category": "Gases",
+      "state": "gas",
+      "color": "#a9c4d4",
+      "density": 1,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "smoke",
+      "name": "Smoke",
+      "category": "Gases",
+      "state": "gas",
+      "color": "#65707d",
+      "density": 2,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "music-air",
+      "name": "Music Air",
+      "category": "Gases",
+      "state": "gas",
+      "color": "#f5a7f2",
+      "density": 1,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "iron",
+      "name": "Iron",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#78818b",
+      "density": 38,
+      "label": "FACT",
+      "note": "Iron conducts heat and electricity."
+    },
+    {
+      "id": "copper",
+      "name": "Copper",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#e27d43",
+      "density": 40,
+      "label": "FACT",
+      "note": "Copper is a strong electrical conductor."
+    },
+    {
+      "id": "steel",
+      "name": "Steel",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#9ba4ae",
+      "density": 39,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "silver",
+      "name": "Silver",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#e3edf2",
+      "density": 41,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "aluminum",
+      "name": "Aluminum",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#bbc6ce",
+      "density": 25,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "wire",
+      "name": "Wire",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#f19a53",
+      "density": 30,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "heater-coil",
+      "name": "Heater Coil",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#ff784f",
+      "density": 32,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "metal-mesh",
+      "name": "Metal Mesh",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#8d9aa5",
+      "density": 24,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "magnet",
+      "name": "Magnet",
+      "category": "Metals",
+      "state": "solid",
+      "color": "#e85c73",
+      "density": 32,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "battery",
+      "name": "Battery",
+      "category": "Metals",
+      "state": "energy",
+      "color": "#f4da57",
+      "density": 29,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "hair-fiber",
+      "name": "Hair Fiber",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#b27e58",
+      "density": 5,
+      "label": "SIMPLIFIED",
+      "note": "A polymer-fiber abstraction, not a model of a human body."
+    },
+    {
+      "id": "wood",
+      "name": "Wood",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#9a663e",
+      "density": 8,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "seed",
+      "name": "Seed",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#93be5c",
+      "density": 6,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "plant",
+      "name": "Plant",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#50b85d",
+      "density": 5,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "food-gel",
+      "name": "Food Gel",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#e79068",
+      "density": 9,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "microbe",
+      "name": "Friendly Microbe",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#c17af2",
+      "density": 3,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "paper",
+      "name": "Paper",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#ede4ce",
+      "density": 4,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "cork",
+      "name": "Cork",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#bf8d5b",
+      "density": 4,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "sponge",
+      "name": "Sponge",
+      "category": "Living-ish",
+      "state": "solid",
+      "color": "#f0cd51",
+      "density": 4,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "compost",
+      "name": "Compost",
+      "category": "Living-ish",
+      "state": "powder",
+      "color": "#5c4934",
+      "density": 9,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "heat",
+      "name": "Heat",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#ff5d3b",
+      "density": 0,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "cold",
+      "name": "Cold",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#70d9ff",
+      "density": 0,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "spark",
+      "name": "Spark",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#ffe15d",
+      "density": 0,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "acid-abstract",
+      "name": "Acid Token",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#b7ef55",
+      "density": 12,
+      "label": "SIMPLIFIED",
+      "note": "Abstract acidity with no concentration or handling instructions."
+    },
+    {
+      "id": "base-abstract",
+      "name": "Base Token",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#6ad5ef",
+      "density": 12,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "catalyst",
+      "name": "Catalyst Token",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#ef8fff",
+      "density": 10,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "electricity",
+      "name": "Charge",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#ffef75",
+      "density": 0,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "sound-pulse",
+      "name": "Sound Pulse",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#ff93da",
+      "density": 0,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "pressure-pulse",
+      "name": "Pressure Pulse",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#f5aa64",
+      "density": 0,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "category": "Energy",
+      "state": "energy",
+      "color": "#fff7bd",
+      "density": 0,
+      "label": "SIMPLIFIED",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "rainbow-foam",
+      "name": "Rainbow Foam",
+      "category": "Impossible",
+      "state": "fictional",
+      "color": "#ff7ac8",
+      "density": 6,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "music-particle",
+      "name": "Music Particle",
+      "category": "Impossible",
+      "state": "fictional",
+      "color": "#bd82ff",
+      "density": 2,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "antigravity-gel",
+      "name": "Up-Gel",
+      "category": "Impossible",
+      "state": "fictional",
+      "color": "#55f2c2",
+      "density": 5,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "moon-sand",
+      "name": "Moon Sand",
+      "category": "Impossible",
+      "state": "fictional",
+      "color": "#b9c6ff",
+      "density": 10,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "portal-dust",
+      "name": "Portal Dust",
+      "category": "Impossible",
+      "state": "fictional",
+      "color": "#8c72ff",
+      "density": 2,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "giggle-gas",
+      "name": "Giggle Gas",
+      "category": "Impossible",
+      "state": "fictional",
+      "color": "#b8ec6b",
+      "density": 1,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "time-crystal",
+      "name": "Time Crystal",
+      "category": "Impossible",
+      "state": "fictional",
+      "color": "#ff92a6",
+      "density": 20,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    },
+    {
+      "id": "monster-goo",
+      "name": "Monster Goo",
+      "category": "Impossible",
+      "state": "fictional",
+      "color": "#78e35e",
+      "density": 13,
+      "label": "FICTIONAL",
+      "note": "Behavior is a playable approximation, not a laboratory prediction."
+    }
+  ],
+  "tools": [
+    "brush",
+    "erase",
+    "pick",
+    "heat",
+    "cool",
+    "mix",
+    "impact",
+    "charge",
+    "vacuum",
+    "copy",
+    "measure",
+    "portal"
+  ],
+  "challenges": [
+    {
+      "title": "Your first sandpile",
+      "prompt": "Draw sand and watch it find a slope.",
+      "category": "Start here",
+      "allowed": [
+        "sand"
+      ],
+      "goal": {
+        "materialId": "sand",
+        "count": 24
+      },
+      "learningPoint": "Grains settle and form a stable angle.",
+      "modelLimitations": "Cells stand in for many real grains.",
+      "fictionBoundary": "No invented reaction is used.",
+      "id": "challenge-01",
+      "number": 1,
+      "hints": [
+        "Watch how sand moves.",
+        "Try sand.",
+        "Build until you have 24 sand cells."
+      ],
+      "sourceId": "SRC-LAB-001"
+    },
+    {
+      "title": "A pocket of rain",
+      "prompt": "Pour water over a little ridge.",
+      "category": "Start here",
+      "allowed": [
+        "water",
+        "sand"
+      ],
+      "goal": {
+        "materialId": "water",
+        "count": 18
+      },
+      "learningPoint": "Liquids flow toward available lower spaces.",
+      "modelLimitations": "Viscosity and pressure are simplified.",
+      "fictionBoundary": "The grid is a game-sized world.",
+      "id": "challenge-02",
+      "number": 2,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with sand.",
+        "Build until you have 18 water cells."
+      ],
+      "sourceId": "SRC-LAB-002"
+    },
+    {
+      "title": "Freeze the drip",
+      "prompt": "Cool water until ice appears.",
+      "category": "Start here",
+      "allowed": [
+        "water",
+        "cold"
+      ],
+      "goal": {
+        "materialId": "ice",
+        "count": 6
+      },
+      "learningPoint": "Water changes phase when thermal energy changes.",
+      "modelLimitations": "Temperature is represented by a tool event.",
+      "fictionBoundary": "The cold token is not a real substance.",
+      "id": "challenge-03",
+      "number": 3,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with cold.",
+        "Build until you have 6 ice cells."
+      ],
+      "sourceId": "SRC-LAB-003"
+    },
+    {
+      "title": "Steam signal",
+      "prompt": "Warm water and catch a rising cloud.",
+      "category": "Start here",
+      "allowed": [
+        "water",
+        "heat"
+      ],
+      "goal": {
+        "materialId": "steam",
+        "count": 6
+      },
+      "learningPoint": "Water can change from liquid to gas.",
+      "modelLimitations": "Boiling pressure and temperature are omitted.",
+      "fictionBoundary": "The heat brush is an abstract control.",
+      "id": "challenge-04",
+      "number": 4,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with heat.",
+        "Build until you have 6 steam cells."
+      ],
+      "sourceId": "SRC-LAB-004"
+    },
+    {
+      "title": "Pause a waterfall",
+      "prompt": "Pause, place water, then advance one tick.",
+      "category": "Start here",
+      "allowed": [
+        "water",
+        "stone"
+      ],
+      "goal": {
+        "materialId": "water",
+        "count": 10
+      },
+      "learningPoint": "A fixed step lets us inspect change one moment at a time.",
+      "modelLimitations": "The simulation advances in discrete ticks.",
+      "fictionBoundary": "Ticks are a model, not time itself.",
+      "id": "challenge-05",
+      "number": 5,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with stone.",
+        "Build until you have 10 water cells."
+      ],
+      "sourceId": "SRC-LAB-005"
+    },
+    {
+      "title": "Undo the spill",
+      "prompt": "Make a spill, then undo and rebuild it.",
+      "category": "Start here",
+      "allowed": [
+        "water",
+        "oil"
+      ],
+      "goal": {
+        "materialId": "oil",
+        "count": 8
+      },
+      "learningPoint": "A command log can reproduce and reverse user actions.",
+      "modelLimitations": "Undo tracks commands, not every internal event.",
+      "fictionBoundary": "No chemistry claim is made.",
+      "id": "challenge-06",
+      "number": 6,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with oil.",
+        "Build until you have 8 oil cells."
+      ],
+      "sourceId": "SRC-LAB-006"
+    },
+    {
+      "title": "Make a polite fart",
+      "prompt": "Combine food gel and a friendly microbe.",
+      "category": "Absurd builds",
+      "allowed": [
+        "food-gel",
+        "microbe"
+      ],
+      "goal": {
+        "materialId": "game-stink",
+        "count": 6
+      },
+      "learningPoint": "Gases spread into available space.",
+      "modelLimitations": "Biology and reaction kinetics are omitted.",
+      "fictionBoundary": "This is deliberately not a real recipe.",
+      "id": "challenge-07",
+      "number": 7,
+      "hints": [
+        "Watch how food gel moves.",
+        "Try food gel with microbe.",
+        "Build until you have 6 game stink cells."
+      ],
+      "sourceId": "SRC-LAB-007"
+    },
+    {
+      "title": "Grow impossible hair",
+      "prompt": "Feed a seed until fibers climb upward.",
+      "category": "Absurd builds",
+      "allowed": [
+        "seed",
+        "water",
+        "hair-fiber"
+      ],
+      "goal": {
+        "materialId": "hair-fiber",
+        "count": 12
+      },
+      "learningPoint": "Fibers are long structures made from repeating units.",
+      "modelLimitations": "Growth is a visual polymer analogy.",
+      "fictionBoundary": "It does not simulate a body.",
+      "id": "challenge-08",
+      "number": 8,
+      "hints": [
+        "Watch how seed moves.",
+        "Try seed with water.",
+        "Build until you have 12 hair fiber cells."
+      ],
+      "sourceId": "SRC-LAB-008"
+    },
+    {
+      "title": "Build a tiny toilet",
+      "prompt": "Shape a bowl and guide water through it.",
+      "category": "Absurd builds",
+      "allowed": [
+        "ceramic",
+        "water"
+      ],
+      "goal": {
+        "materialId": "ceramic",
+        "count": 18
+      },
+      "learningPoint": "A siphon can move liquid through a bent path.",
+      "modelLimitations": "Air pressure and pipe geometry are compressed.",
+      "fictionBoundary": "The completion detector is a game rule.",
+      "id": "challenge-09",
+      "number": 9,
+      "hints": [
+        "Watch how ceramic moves.",
+        "Try ceramic with water.",
+        "Build until you have 18 ceramic cells."
+      ],
+      "sourceId": "SRC-LAB-009"
+    },
+    {
+      "title": "Matter makes music",
+      "prompt": "Send a pulse through a metal string.",
+      "category": "Absurd builds",
+      "allowed": [
+        "wire",
+        "sound-pulse"
+      ],
+      "goal": {
+        "materialId": "music-particle",
+        "count": 4
+      },
+      "learningPoint": "Sound begins with vibration and travels through matter.",
+      "modelLimitations": "Frequency is quantized into colored pulses.",
+      "fictionBoundary": "Materials do not create melody from nothing.",
+      "id": "challenge-10",
+      "number": 10,
+      "hints": [
+        "Watch how wire moves.",
+        "Try wire with sound pulse.",
+        "Build until you have 4 music particle cells."
+      ],
+      "sourceId": "SRC-LAB-010"
+    },
+    {
+      "title": "Rainbow laundry",
+      "prompt": "Mix two dyes into a foam cloud.",
+      "category": "Absurd builds",
+      "allowed": [
+        "dye-cyan",
+        "dye-pink",
+        "bubble-liquid"
+      ],
+      "goal": {
+        "materialId": "rainbow-foam",
+        "count": 8
+      },
+      "learningPoint": "Mixtures can combine optical effects.",
+      "modelLimitations": "Color mixing is screen-based.",
+      "fictionBoundary": "Rainbow foam is fictional.",
+      "id": "challenge-11",
+      "number": 11,
+      "hints": [
+        "Watch how dye cyan moves.",
+        "Try dye cyan with dye pink.",
+        "Build until you have 8 rainbow foam cells."
+      ],
+      "sourceId": "SRC-LAB-011"
+    },
+    {
+      "title": "Moon-sand castle",
+      "prompt": "Stack sand that refuses to fall.",
+      "category": "Absurd builds",
+      "allowed": [
+        "moon-sand",
+        "stone"
+      ],
+      "goal": {
+        "materialId": "moon-sand",
+        "count": 20
+      },
+      "learningPoint": "Material behavior depends on interactions between particles.",
+      "modelLimitations": "Cohesion is a binary rule.",
+      "fictionBoundary": "Moon Sand here is invented.",
+      "id": "challenge-12",
+      "number": 12,
+      "hints": [
+        "Watch how moon sand moves.",
+        "Try moon sand with stone.",
+        "Build until you have 20 moon sand cells."
+      ],
+      "sourceId": "SRC-LAB-012"
+    },
+    {
+      "title": "The upside-down drip",
+      "prompt": "Use Up-Gel to make matter rise.",
+      "category": "Absurd builds",
+      "allowed": [
+        "water",
+        "antigravity-gel"
+      ],
+      "goal": {
+        "materialId": "antigravity-gel",
+        "count": 10
+      },
+      "learningPoint": "Density and forces influence motion.",
+      "modelLimitations": "Only vertical cell movement is modeled.",
+      "fictionBoundary": "Anti-gravity gel is fictional.",
+      "id": "challenge-13",
+      "number": 13,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with antigravity gel.",
+        "Build until you have 10 antigravity gel cells."
+      ],
+      "sourceId": "SRC-LAB-013"
+    },
+    {
+      "title": "Portal plumbing",
+      "prompt": "Move water across the lab without a pipe.",
+      "category": "Absurd builds",
+      "allowed": [
+        "water",
+        "portal-dust"
+      ],
+      "goal": {
+        "materialId": "portal-dust",
+        "count": 4
+      },
+      "learningPoint": "System boundaries decide where matter may move.",
+      "modelLimitations": "Transport is an instantaneous mapping.",
+      "fictionBoundary": "Portals are fictional.",
+      "id": "challenge-14",
+      "number": 14,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with portal dust.",
+        "Build until you have 4 portal dust cells."
+      ],
+      "sourceId": "SRC-LAB-014"
+    },
+    {
+      "title": "Feed the monster",
+      "prompt": "Layer goo, gel, and fizz into a face.",
+      "category": "Absurd builds",
+      "allowed": [
+        "monster-goo",
+        "food-gel",
+        "giggle-gas"
+      ],
+      "goal": {
+        "materialId": "monster-goo",
+        "count": 16
+      },
+      "learningPoint": "Complex patterns can emerge from simple placement rules.",
+      "modelLimitations": "No biology is simulated.",
+      "fictionBoundary": "The monster is entirely fictional.",
+      "id": "challenge-15",
+      "number": 15,
+      "hints": [
+        "Watch how monster goo moves.",
+        "Try monster goo with food gel.",
+        "Build until you have 16 monster goo cells."
+      ],
+      "sourceId": "SRC-LAB-015"
+    },
+    {
+      "title": "Density stack",
+      "prompt": "Layer syrup, water, and oil.",
+      "category": "Matter school",
+      "allowed": [
+        "syrup",
+        "water",
+        "oil"
+      ],
+      "goal": {
+        "materialId": "syrup",
+        "count": 12
+      },
+      "learningPoint": "Liquids of different densities can form layers.",
+      "modelLimitations": "Mixing and surface tension are simplified.",
+      "fictionBoundary": "Stable layers are accelerated for play.",
+      "id": "challenge-16",
+      "number": 16,
+      "hints": [
+        "Watch how syrup moves.",
+        "Try syrup with water.",
+        "Build until you have 12 syrup cells."
+      ],
+      "sourceId": "SRC-LAB-016"
+    },
+    {
+      "title": "Graphite path",
+      "prompt": "Bridge a battery with graphite.",
+      "category": "Matter school",
+      "allowed": [
+        "battery",
+        "graphite",
+        "electricity"
+      ],
+      "goal": {
+        "materialId": "electricity",
+        "count": 4
+      },
+      "learningPoint": "Graphite can conduct electricity.",
+      "modelLimitations": "Resistance and voltage are not numerically modeled.",
+      "fictionBoundary": "Charge is shown as a visible token.",
+      "id": "challenge-17",
+      "number": 17,
+      "hints": [
+        "Watch how battery moves.",
+        "Try battery with graphite.",
+        "Build until you have 4 electricity cells."
+      ],
+      "sourceId": "SRC-LAB-017"
+    },
+    {
+      "title": "Copper circuit",
+      "prompt": "Complete a bright copper loop.",
+      "category": "Matter school",
+      "allowed": [
+        "battery",
+        "copper",
+        "light"
+      ],
+      "goal": {
+        "materialId": "light",
+        "count": 4
+      },
+      "learningPoint": "A closed conductive path allows current.",
+      "modelLimitations": "The circuit is topological, not quantitative.",
+      "fictionBoundary": "Light tokens mark success.",
+      "id": "challenge-18",
+      "number": 18,
+      "hints": [
+        "Watch how battery moves.",
+        "Try battery with copper.",
+        "Build until you have 4 light cells."
+      ],
+      "sourceId": "SRC-LAB-018"
+    },
+    {
+      "title": "Salt disappears",
+      "prompt": "Dissolve salt into moving water.",
+      "category": "Matter school",
+      "allowed": [
+        "salt",
+        "water"
+      ],
+      "goal": {
+        "materialId": "water",
+        "count": 24
+      },
+      "learningPoint": "Dissolving disperses ions through a solvent.",
+      "modelLimitations": "Ions are not individually represented.",
+      "fictionBoundary": "The visual disappearance is accelerated.",
+      "id": "challenge-19",
+      "number": 19,
+      "hints": [
+        "Watch how salt moves.",
+        "Try salt with water.",
+        "Build until you have 24 water cells."
+      ],
+      "sourceId": "SRC-LAB-019"
+    },
+    {
+      "title": "Oil keeps its distance",
+      "prompt": "Pour oil and water into one vessel.",
+      "category": "Matter school",
+      "allowed": [
+        "oil",
+        "water",
+        "glass"
+      ],
+      "goal": {
+        "materialId": "oil",
+        "count": 12
+      },
+      "learningPoint": "Oil and water tend not to mix and can separate by density.",
+      "modelLimitations": "Emulsions are omitted.",
+      "fictionBoundary": "Separation is exaggerated.",
+      "id": "challenge-20",
+      "number": 20,
+      "hints": [
+        "Watch how oil moves.",
+        "Try oil with water.",
+        "Build until you have 12 oil cells."
+      ],
+      "sourceId": "SRC-LAB-020"
+    },
+    {
+      "title": "Ice afloat",
+      "prompt": "Make ice and watch where it settles.",
+      "category": "Matter school",
+      "allowed": [
+        "water",
+        "ice"
+      ],
+      "goal": {
+        "materialId": "ice",
+        "count": 8
+      },
+      "learningPoint": "Ordinary ice is less dense than liquid water.",
+      "modelLimitations": "Buoyancy is cell-based.",
+      "fictionBoundary": "Phase change timing is a game rule.",
+      "id": "challenge-21",
+      "number": 21,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with ice.",
+        "Build until you have 8 ice cells."
+      ],
+      "sourceId": "SRC-LAB-021"
+    },
+    {
+      "title": "Diffusion cloud",
+      "prompt": "Release dye into still water.",
+      "category": "Matter school",
+      "allowed": [
+        "water",
+        "dye-pink"
+      ],
+      "goal": {
+        "materialId": "dye-pink",
+        "count": 10
+      },
+      "learningPoint": "Particles spread from concentrated regions over time.",
+      "modelLimitations": "Diffusion is much faster than in reality.",
+      "fictionBoundary": "Colored cells are a visualization.",
+      "id": "challenge-22",
+      "number": 22,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with dye pink.",
+        "Build until you have 10 dye pink cells."
+      ],
+      "sourceId": "SRC-LAB-022"
+    },
+    {
+      "title": "Same carbon, new structure",
+      "prompt": "Compare graphite with a crystal lattice.",
+      "category": "Matter school",
+      "allowed": [
+        "graphite",
+        "crystal"
+      ],
+      "goal": {
+        "materialId": "crystal",
+        "count": 10
+      },
+      "learningPoint": "Structure can strongly affect properties even when elements overlap.",
+      "modelLimitations": "The crystal is a generic teaching stand-in.",
+      "fictionBoundary": "No claim that this tool manufactures diamond.",
+      "id": "challenge-23",
+      "number": 23,
+      "hints": [
+        "Watch how graphite moves.",
+        "Try graphite with crystal.",
+        "Build until you have 10 crystal cells."
+      ],
+      "sourceId": "SRC-LAB-023"
+    },
+    {
+      "title": "Heat bridge",
+      "prompt": "Carry heat along a metal path.",
+      "category": "Matter school",
+      "allowed": [
+        "iron",
+        "heat",
+        "wax"
+      ],
+      "goal": {
+        "materialId": "heat",
+        "count": 6
+      },
+      "learningPoint": "Metals often conduct heat more readily than insulating materials.",
+      "modelLimitations": "Heat capacity is qualitative.",
+      "fictionBoundary": "Heat tokens are visible game markers.",
+      "id": "challenge-24",
+      "number": 24,
+      "hints": [
+        "Watch how iron moves.",
+        "Try iron with heat.",
+        "Build until you have 6 heat cells."
+      ],
+      "sourceId": "SRC-LAB-024"
+    },
+    {
+      "title": "Drum skin",
+      "prompt": "Strike a stretched rubber surface.",
+      "category": "Sound & machines",
+      "allowed": [
+        "rubber",
+        "impact",
+        "sound-pulse"
+      ],
+      "goal": {
+        "materialId": "sound-pulse",
+        "count": 6
+      },
+      "learningPoint": "A struck surface vibrates and launches sound waves.",
+      "modelLimitations": "The waveform has no calibrated amplitude.",
+      "fictionBoundary": "Pulse colors are artistic.",
+      "id": "challenge-25",
+      "number": 25,
+      "hints": [
+        "Watch how rubber moves.",
+        "Try rubber with impact.",
+        "Build until you have 6 sound pulse cells."
+      ],
+      "sourceId": "SRC-LAB-025"
+    },
+    {
+      "title": "High note, low note",
+      "prompt": "Compare short and long vibrating wires.",
+      "category": "Sound & machines",
+      "allowed": [
+        "wire",
+        "sound-pulse"
+      ],
+      "goal": {
+        "materialId": "sound-pulse",
+        "count": 8
+      },
+      "learningPoint": "Vibrating length influences frequency.",
+      "modelLimitations": "Pitch uses three discrete bands.",
+      "fictionBoundary": "The score is a game melody.",
+      "id": "challenge-26",
+      "number": 26,
+      "hints": [
+        "Watch how wire moves.",
+        "Try wire with sound pulse.",
+        "Build until you have 8 sound pulse cells."
+      ],
+      "sourceId": "SRC-LAB-026"
+    },
+    {
+      "title": "Switch chain",
+      "prompt": "Carry charge through a controllable path.",
+      "category": "Sound & machines",
+      "allowed": [
+        "battery",
+        "wire",
+        "metal-mesh",
+        "electricity"
+      ],
+      "goal": {
+        "materialId": "electricity",
+        "count": 8
+      },
+      "learningPoint": "Switches control whether a circuit path is complete.",
+      "modelLimitations": "No dangerous electrical values are modeled.",
+      "fictionBoundary": "Charge particles are fictional visuals.",
+      "id": "challenge-27",
+      "number": 27,
+      "hints": [
+        "Watch how battery moves.",
+        "Try battery with wire.",
+        "Build until you have 8 electricity cells."
+      ],
+      "sourceId": "SRC-LAB-027"
+    },
+    {
+      "title": "Conveyor pulse",
+      "prompt": "Move a signal from one portal to another.",
+      "category": "Sound & machines",
+      "allowed": [
+        "portal-dust",
+        "sound-pulse"
+      ],
+      "goal": {
+        "materialId": "music-particle",
+        "count": 6
+      },
+      "learningPoint": "Signals can be transformed while information persists.",
+      "modelLimitations": "Transport delay is one tick.",
+      "fictionBoundary": "Portals and music particles are fictional.",
+      "id": "challenge-28",
+      "number": 28,
+      "hints": [
+        "Watch how portal dust moves.",
+        "Try portal dust with sound pulse.",
+        "Build until you have 6 music particle cells."
+      ],
+      "sourceId": "SRC-LAB-028"
+    },
+    {
+      "title": "Bathroom symphony",
+      "prompt": "Build a siphon that triggers a note.",
+      "category": "Final mixes",
+      "allowed": [
+        "ceramic",
+        "water",
+        "wire",
+        "sound-pulse"
+      ],
+      "goal": {
+        "materialId": "music-particle",
+        "count": 8
+      },
+      "learningPoint": "Structures can couple fluid motion to vibration.",
+      "modelLimitations": "Coupling is event-based.",
+      "fictionBoundary": "The bathroom orchestra is playful fiction.",
+      "id": "challenge-29",
+      "number": 29,
+      "hints": [
+        "Watch how ceramic moves.",
+        "Try ceramic with water.",
+        "Build until you have 8 music particle cells."
+      ],
+      "sourceId": "SRC-LAB-029"
+    },
+    {
+      "title": "Tiny weather machine",
+      "prompt": "Cycle water, steam, fog, and rain.",
+      "category": "Final mixes",
+      "allowed": [
+        "water",
+        "heat",
+        "cold",
+        "steam",
+        "fog"
+      ],
+      "goal": {
+        "materialId": "water",
+        "count": 28
+      },
+      "learningPoint": "Water moves among phases in a cycle.",
+      "modelLimitations": "Cloud formation and pressure are omitted.",
+      "fictionBoundary": "The lab compresses a weather system into seconds.",
+      "id": "challenge-30",
+      "number": 30,
+      "hints": [
+        "Watch how water moves.",
+        "Try water with heat.",
+        "Build until you have 28 water cells."
+      ],
+      "sourceId": "SRC-LAB-030"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "scene-01",
+      "name": "Kitchen counter"
+    },
+    {
+      "id": "scene-02",
+      "name": "Bathroom loop"
+    },
+    {
+      "id": "scene-03",
+      "name": "Basement bench"
+    },
+    {
+      "id": "scene-04",
+      "name": "Pocket garden"
+    },
+    {
+      "id": "scene-05",
+      "name": "Tiny factory"
+    },
+    {
+      "id": "scene-06",
+      "name": "Sound stage"
+    },
+    {
+      "id": "scene-07",
+      "name": "Sewer sketch"
+    },
+    {
+      "id": "scene-08",
+      "name": "Ice field"
+    },
+    {
+      "id": "scene-09",
+      "name": "Pocket volcano"
+    },
+    {
+      "id": "scene-10",
+      "name": "Space galley"
+    },
+    {
+      "id": "scene-11",
+      "name": "Monster belly"
+    },
+    {
+      "id": "scene-12",
+      "name": "Blank laboratory"
+    }
+  ]
+}

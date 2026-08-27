@@ -1,8 +1,8 @@
 {
   "manifestVersion": 1,
   "appId": "scroll-to-space",
-  "buildVersion": "0.1.0-fixture",
-  "contentVersion": "2026-08-27.fixture.1",
+  "buildVersion": "1.0.0-rc.1",
+  "contentVersion": "2026-08-27.production.1",
   "schemaVersions": {
     "fixture": 1,
     "rightsLedger": 1
@@ -12,35 +12,55 @@
   "files": [
     {
       "path": "fixture.json",
-      "sha256": "cf6d4315ae4529d87870a3884a06f7934102c1266cf5d94d9178b8a4f9dda606",
-      "bytes": 304,
+      "sha256": "a15f0673ca67d4eb74dac83d15520c4856515843c87081b9c712e3e763be6857",
+      "bytes": 709,
       "contentType": "application/json",
-      "licenseId": "FIXTURE-ONLY",
+      "licenseId": "MIT",
       "sourceIds": [
         "scroll-to-space:fixture.json"
       ]
     },
     {
       "path": "rights-ledger.tsv",
-      "sha256": "9adb5aaeb929d2abc8f5faaa937439f61003d7e404cf472dd945957b2c304ece",
-      "bytes": 368,
+      "sha256": "5483713ba47745a2e1f3e62c2308d5d54afca899208e8d5affa1947f683fb32f",
+      "bytes": 1263,
       "contentType": "text/tab-separated-values",
       "licenseId": "LEDGER",
       "sourceIds": [
         "scroll-to-space:rights-ledger.tsv"
       ]
+    },
+    {
+      "path": "og.png",
+      "sha256": "0ed35bc0be7a020ed653c46f44e52b6182d6ca6b6853200368e3e93da0a37f3a",
+      "bytes": 1842221,
+      "contentType": "image/png",
+      "licenseId": "PROJECT-GENERATED",
+      "sourceIds": [
+        "scroll-to-space:og.png"
+      ]
+    },
+    {
+      "path": "sw.js",
+      "sha256": "b0d19975af17ea29e0e80dd2b317d37732f1699e278f7d5a899e9fdc569a19da",
+      "bytes": 980,
+      "contentType": "text/javascript",
+      "licenseId": "MIT",
+      "sourceIds": [
+        "scroll-to-space:sw.js"
+      ]
     }
   ],
   "datasets": [
     {
-      "datasetId": "scroll-to-space-fixture",
-      "version": "1",
+      "datasetId": "scroll-to-space-story",
+      "version": "2",
       "retrievedAt": "2026-08-27",
       "sourceUrl": "project-authored://scroll-to-space",
-      "licenseId": "FIXTURE-ONLY",
+      "licenseId": "MIT",
       "transformVersion": "identity-1",
-      "outputSha256": "cf6d4315ae4529d87870a3884a06f7934102c1266cf5d94d9178b8a4f9dda606"
+      "outputSha256": "a15f0673ca67d4eb74dac83d15520c4856515843c87081b9c712e3e763be6857"
     }
   ],
-  "totalBytes": 672
+  "totalBytes": 1845173
 }
