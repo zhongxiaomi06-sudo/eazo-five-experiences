@@ -34,16 +34,16 @@ export type PublicPlan = {
 };
 
 export const categories: Record<CategoryId, { label: string; color: string }> = {
-  sleep: { label: 'Sleep', color: '#9485FF' },
-  'work-study': { label: 'Make & learn', color: '#FF866B' },
-  care: { label: 'Care', color: '#F4C95D' },
-  commute: { label: 'Getting around', color: '#8BA6BF' },
-  food: { label: 'Food', color: '#FF9CC9' },
-  exercise: { label: 'Move', color: '#67E8A5' },
-  social: { label: 'People', color: '#5ED5FF' },
-  play: { label: 'Play', color: '#D8FF4F' },
-  personal: { label: 'For me', color: '#B6C2D9' },
-  unallocated: { label: 'Open time', color: '#6F7787' },
+  sleep: { label: '睡眠', color: '#7b7aa6' },
+  'work-study': { label: '创作与学习', color: '#c17a56' },
+  care: { label: '照料', color: '#c9a95c' },
+  commute: { label: '通勤', color: '#8b9aa6' },
+  food: { label: '饮食', color: '#c98a86' },
+  exercise: { label: '运动', color: '#7fa383' },
+  social: { label: '社交', color: '#6fa3b0' },
+  play: { label: '玩乐', color: '#b7623f' },
+  personal: { label: '独处', color: '#a79b86' },
+  unallocated: { label: '空闲时间', color: '#cabfa9' },
 };
 
 const keywordMap: Array<[CategoryId, RegExp]> = [
@@ -83,14 +83,14 @@ export function validateBlocks(blocks: TimeBlock[]): string[] {
 
 export function classifyLocally(text: string, locale = 'en-US'): Plan {
   const raw = text.split(/[,，;；\n]+/).map((part) => part.trim()).filter(Boolean).slice(0, MAX_BLOCKS);
-  const titles = raw.length ? raw : ['Sleep deeply', 'Make something', 'Move outside', 'Eat slowly', 'Be with people'];
+  const titles = raw.length ? raw : ['好好睡一觉', '做点东西', '出门走走', '慢慢吃饭', '和人相处'];
   const minimumSleep = titles.some((title) => keywordMap[0]![1].test(title)) ? 0 : 480;
   const available = DAY_MINUTES - minimumSleep;
   const base = Math.floor(available / titles.length);
   let cursor = 0;
   const blocks: TimeBlock[] = [];
   if (minimumSleep) {
-    blocks.push({ id: uid(), title: 'Sleep deeply', categoryId: 'sleep', startMin: 0, endMin: minimumSleep, confidence: 1 });
+    blocks.push({ id: uid(), title: '好好睡一觉', categoryId: 'sleep', startMin: 0, endMin: minimumSleep, confidence: 1 });
     cursor = minimumSleep;
   }
   titles.forEach((title, index) => {
@@ -100,7 +100,7 @@ export function classifyLocally(text: string, locale = 'en-US'): Plan {
     cursor += duration;
   });
   const now = new Date().toISOString();
-  return { schemaVersion: 2, planId: uid(), title: 'A day worth stealing', locale, sourceText: text, blocks, createdAt: now, updatedAt: now };
+  return { schemaVersion: 2, planId: uid(), title: '一个值得偷来过的一天', locale, sourceText: text, blocks, createdAt: now, updatedAt: now };
 }
 
 export function planFromDraft(draft: unknown, sourceText: string, locale = 'en-US'): Plan | null {
@@ -126,7 +126,7 @@ export function planFromDraft(draft: unknown, sourceText: string, locale = 'en-U
   }
   if (cursor !== DAY_MINUTES || validateBlocks(blocks).length) return null;
   const now = new Date().toISOString();
-  return { schemaVersion: 2, planId: uid(), title: 'A day worth stealing', locale, sourceText, blocks, createdAt: now, updatedAt: now };
+  return { schemaVersion: 2, planId: uid(), title: '一个值得偷来过的一天', locale, sourceText, blocks, createdAt: now, updatedAt: now };
 }
 
 export function resizeSharedBoundary(blocks: TimeBlock[], index: number, nextBoundary: number, snap = 5) {
@@ -152,8 +152,44 @@ export function resizeSingleBoundary(blocks: TimeBlock[], index: number, endMin:
   return { ok: true as const, blocks: updated };
 }
 
+export function mergeOpenTime(blocks: TimeBlock[]): TimeBlock[] {
+  const merged: TimeBlock[] = [];
+  for (const block of blocks) {
+    const previous = merged[merged.length - 1];
+    if (
+      previous && previous.categoryId === 'unallocated' && block.categoryId === 'unallocated'
+      && previous.endMin === block.startMin
+    ) {
+      previous.endMin = block.endMin;
+      continue;
+    }
+    merged.push({ ...block });
+  }
+  return merged;
+}
+
 export function deleteAsOpenTime(blocks: TimeBlock[], id: string): TimeBlock[] {
-  return blocks.map((block) => block.id === id ? { ...block, title: 'Open time', categoryId: 'unallocated', confidence: 1 } : block);
+  const opened = blocks.map((block) => block.id === id
+    ? { ...block, title: '空闲时间', categoryId: 'unallocated' as CategoryId, confidence: 1 }
+    : block);
+  return mergeOpenTime(opened);
+}
+
+export function splitBlock(blocks: TimeBlock[], id: string, snap = 5): { ok: true; blocks: TimeBlock[] } | { ok: false; code: 'TOO_SHORT' | 'TOO_MANY_BLOCKS' } {
+  const index = blocks.findIndex((block) => block.id === id);
+  const block = blocks[index];
+  if (!block) return { ok: false, code: 'TOO_SHORT' };
+  if (blocks.length >= MAX_BLOCKS) return { ok: false, code: 'TOO_MANY_BLOCKS' };
+  const span = block.endMin - block.startMin;
+  const step = Math.max(1, snap);
+  // Split near the middle, snapped, keeping both halves at least one integer minute.
+  let midpoint = block.startMin + Math.round(span / 2 / step) * step;
+  if (midpoint <= block.startMin) midpoint = block.startMin + 1;
+  if (midpoint >= block.endMin) midpoint = block.endMin - 1;
+  if (midpoint <= block.startMin || midpoint >= block.endMin) return { ok: false, code: 'TOO_SHORT' };
+  const first: TimeBlock = { ...block, endMin: midpoint };
+  const second: TimeBlock = { ...block, id: uid(), title: block.title, startMin: midpoint, endMin: block.endMin };
+  return { ok: true, blocks: [...blocks.slice(0, index), first, second, ...blocks.slice(index + 1)] };
 }
 
 export function sanitizeForShare(plan: Plan): PublicPlan {
@@ -170,26 +206,26 @@ export function sanitizeForShare(plan: Plan): PublicPlan {
 
 export type Comparison = { id: string; text: string; detail: string; raw: number };
 const comparisonLedger = [
-  { id: 'books', category: 'work-study' as CategoryId, unit: 360, noun: 'six-hour creative sessions', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'walks', category: 'exercise' as CategoryId, unit: 30, noun: 'half-hour walks', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'dinners', category: 'food' as CategoryId, unit: 90, noun: 'slow dinners', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'calls', category: 'social' as CategoryId, unit: 20, noun: 'twenty-minute calls', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'naps', category: 'sleep' as CategoryId, unit: 20, noun: 'power naps', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'albums', category: 'play' as CategoryId, unit: 45, noun: 'album listens', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'tea', category: 'personal' as CategoryId, unit: 15, noun: 'unhurried cups of tea', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'commutes', category: 'commute' as CategoryId, unit: 40, noun: 'city commutes', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'bedtimes', category: 'care' as CategoryId, unit: 30, noun: 'bedtime stories', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'blank', category: 'unallocated' as CategoryId, unit: 60, noun: 'entire hours left gloriously blank', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'sunsets', category: 'personal' as CategoryId, unit: 20, noun: 'slow sunset pauses', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'chapters', category: 'work-study' as CategoryId, unit: 25, noun: 'focused reading chapters', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'songs', category: 'play' as CategoryId, unit: 4, noun: 'four-minute songs', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'picnics', category: 'social' as CategoryId, unit: 120, noun: 'two-hour picnics', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'recipes', category: 'food' as CategoryId, unit: 60, noun: 'one-hour recipes', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'stretches', category: 'exercise' as CategoryId, unit: 10, noun: 'ten-minute stretches', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'trainrides', category: 'commute' as CategoryId, unit: 25, noun: 'short train rides', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'checkins', category: 'care' as CategoryId, unit: 15, noun: 'thoughtful check-ins', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'dreams', category: 'sleep' as CategoryId, unit: 90, noun: 'ninety-minute sleep cycles', source: 'Internal editorial constant, 2026-08-27' },
-  { id: 'nothing', category: 'unallocated' as CategoryId, unit: 15, noun: 'quarter-hours owing nobody anything', source: 'Internal editorial constant, 2026-08-27' },
+  { id: 'books', category: 'work-study' as CategoryId, unit: 360, noun: '次六小时的沉浸创作', source: '内部编辑常量，2026-08-27' },
+  { id: 'walks', category: 'exercise' as CategoryId, unit: 30, noun: '次半小时散步', source: '内部编辑常量，2026-08-27' },
+  { id: 'dinners', category: 'food' as CategoryId, unit: 90, noun: '顿慢慢享用的晚餐', source: '内部编辑常量，2026-08-27' },
+  { id: 'calls', category: 'social' as CategoryId, unit: 20, noun: '通二十分钟的电话', source: '内部编辑常量，2026-08-27' },
+  { id: 'naps', category: 'sleep' as CategoryId, unit: 20, noun: '次二十分钟小睡', source: '内部编辑常量，2026-08-27' },
+  { id: 'albums', category: 'play' as CategoryId, unit: 45, noun: '次完整听完一张专辑', source: '内部编辑常量，2026-08-27' },
+  { id: 'tea', category: 'personal' as CategoryId, unit: 15, noun: '杯从容喝完的茶', source: '内部编辑常量，2026-08-27' },
+  { id: 'commutes', category: 'commute' as CategoryId, unit: 40, noun: '次城市通勤', source: '内部编辑常量，2026-08-27' },
+  { id: 'bedtimes', category: 'care' as CategoryId, unit: 30, noun: '次睡前故事', source: '内部编辑常量，2026-08-27' },
+  { id: 'blank', category: 'unallocated' as CategoryId, unit: 60, noun: '个完整留白的小时', source: '内部编辑常量，2026-08-27' },
+  { id: 'sunsets', category: 'personal' as CategoryId, unit: 20, noun: '次慢慢看完日落', source: '内部编辑常量，2026-08-27' },
+  { id: 'chapters', category: 'work-study' as CategoryId, unit: 25, noun: '章专注阅读', source: '内部编辑常量，2026-08-27' },
+  { id: 'songs', category: 'play' as CategoryId, unit: 4, noun: '首四分钟的歌', source: '内部编辑常量，2026-08-27' },
+  { id: 'picnics', category: 'social' as CategoryId, unit: 120, noun: '次两小时野餐', source: '内部编辑常量，2026-08-27' },
+  { id: 'recipes', category: 'food' as CategoryId, unit: 60, noun: '次一小时料理', source: '内部编辑常量，2026-08-27' },
+  { id: 'stretches', category: 'exercise' as CategoryId, unit: 10, noun: '次十分钟拉伸', source: '内部编辑常量，2026-08-27' },
+  { id: 'trainrides', category: 'commute' as CategoryId, unit: 25, noun: '段短途火车旅程', source: '内部编辑常量，2026-08-27' },
+  { id: 'checkins', category: 'care' as CategoryId, unit: 15, noun: '次认真问候', source: '内部编辑常量，2026-08-27' },
+  { id: 'dreams', category: 'sleep' as CategoryId, unit: 90, noun: '个九十分钟睡眠周期', source: '内部编辑常量，2026-08-27' },
+  { id: 'nothing', category: 'unallocated' as CategoryId, unit: 15, noun: '段不欠任何人的十五分钟', source: '内部编辑常量，2026-08-27' },
 ];
 
 export function comparisons(plan: Plan): Comparison[] {
@@ -205,8 +241,8 @@ export function comparisons(plan: Plan): Comparison[] {
       return {
         id: item.id,
         raw,
-        text: `${rounded.toLocaleString('en-US')} ${item.noun} fit into one year of this day.`,
-        detail: `${daily} min/day × 365 days ÷ ${item.unit} min/${item.noun.replace(/s$/, '')} = ${raw}. Rounded to the nearest whole number. ${item.source}.`,
+        text: `这一年可以装下 ${rounded.toLocaleString('zh-CN')} ${item.noun}。`,
+        detail: `${daily} 分钟/天 × 365 天 ÷ ${item.unit} 分钟/次 = ${raw}。按最接近的整数四舍五入。${item.source}。`,
       };
     })
     .filter((item) => item.raw > 0)

@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'vitest';
 import {
-  DAY_MINUTES, classifyLocally, comparisons, planFromDraft, resizeSharedBoundary,
-  resizeSingleBoundary, sanitizeForShare, validateBlocks,
+  DAY_MINUTES, classifyLocally, comparisons, deleteAsOpenTime, mergeOpenTime, planFromDraft,
+  resizeSharedBoundary, resizeSingleBoundary, sanitizeForShare, splitBlock, validateBlocks,
 } from './domain';
 import type { Plan, TimeBlock } from './domain';
 
@@ -51,7 +51,7 @@ describe('Ideal Day production contracts', () => {
     ] };
     const dinner = comparisons(plan).find((item) => item.id === 'picnics');
     expect(dinner?.raw).toBe(182.5);
-    expect(dinner?.detail).toContain('60 min/day × 365 days ÷ 120');
+    expect(dinner?.detail).toContain('60 分钟/天 × 365 天 ÷ 120');
   });
 
   test('TEST-DAY-007 share snapshot excludes private source, title, notes and ids', () => {
@@ -68,5 +68,47 @@ describe('Ideal Day production contracts', () => {
     const blocks = ids.map((categoryId, index) => ({ id: categoryId, title: categoryId, categoryId, startMin: index * 60, endMin: index * 60 + 60 }));
     const plan: Plan = { schemaVersion: 2, planId: 'all', title: 'All', locale: 'en-US', createdAt: '', updatedAt: '', blocks };
     expect(comparisons(plan).length).toBeGreaterThanOrEqual(20);
+  });
+
+  test('deleteAsOpenTime merges adjacent open-time blocks and conserves the day', () => {
+    const blocks: TimeBlock[] = [
+      { id: 'a', title: 'A', categoryId: 'unallocated', startMin: 0, endMin: 480 },
+      { id: 'b', title: 'B', categoryId: 'work-study', startMin: 480, endMin: 960 },
+      { id: 'c', title: 'C', categoryId: 'unallocated', startMin: 960, endMin: 1440 },
+    ];
+    const result = deleteAsOpenTime(blocks, 'b');
+    expect(result).toHaveLength(1);
+    expect(result[0]).toMatchObject({ categoryId: 'unallocated', startMin: 0, endMin: 1440 });
+    expect(validateBlocks(result)).toEqual([]);
+  });
+
+  test('mergeOpenTime leaves non-open blocks untouched', () => {
+    const blocks: TimeBlock[] = [
+      { id: 'a', title: 'A', categoryId: 'unallocated', startMin: 0, endMin: 60 },
+      { id: 'b', title: 'B', categoryId: 'work-study', startMin: 60, endMin: 120 },
+    ];
+    expect(mergeOpenTime(blocks)).toHaveLength(2);
+  });
+
+  test('splitBlock divides one block into two adjacent blocks preserving total minutes', () => {
+    const blocks: TimeBlock[] = [
+      { id: 'a', title: 'Focus', categoryId: 'work-study', startMin: 0, endMin: 1440 },
+    ];
+    const result = splitBlock(blocks, 'a', 5);
+    expect(result.ok).toBe(true);
+    if (result.ok) {
+      expect(result.blocks).toHaveLength(2);
+      expect(result.blocks[0]!.startMin).toBe(0);
+      expect(result.blocks[0]!.endMin).toBe(result.blocks[1]!.startMin);
+      expect(result.blocks[1]!.endMin).toBe(1440);
+      expect(result.blocks.reduce((sum, block) => sum + block.endMin - block.startMin, 0)).toBe(1440);
+      expect(validateBlocks(result.blocks)).toEqual([]);
+    }
+  });
+
+  test('splitBlock rejects a block too short to divide', () => {
+    const blocks: TimeBlock[] = [{ id: 'a', title: 'Tiny', categoryId: 'play', startMin: 0, endMin: 1 }];
+    const result = splitBlock(blocks, 'a', 5);
+    expect(result).toEqual({ ok: false, code: 'TOO_SHORT' });
   });
 });

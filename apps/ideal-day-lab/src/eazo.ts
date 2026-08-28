@@ -25,7 +25,7 @@ export class ProductionEazoAdapter extends WebFallbackAdapter implements EazoHos
     try {
       const { share } = await import('@eazo/sdk');
       const accepted = await share.compose({
-        text: `My ideal 24 hours\n\n${JSON.stringify(payload.publicData)}`,
+        text: `我的理想 24 小时\n\n${JSON.stringify(payload.publicData)}`,
         sourceAppId: 'ideal-day-lab',
         targetPath: '/?remix=shared',
       });
